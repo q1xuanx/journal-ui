@@ -26,71 +26,73 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Column(
-        spacing: 5.0,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Text(
-              'Welcome \nback!',
-              style: TextStyle(
-                  fontSize: 44.34,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(116, 76, 76, 1)),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            alignment: Alignment.center,
-            child: Image.asset('assets/images/banner.png'),
-          ),
-          Container(
-            alignment: Alignment.centerRight,
-            child: Padding(
-              padding: EdgeInsets.only(right: width * 0.12),
+      body: SingleChildScrollView(
+        child: Column(
+          spacing: 5.0,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0),
               child: Text(
-                'Continue',
+                'Welcome \nback!',
                 style: TextStyle(
-                    color: Color.fromRGBO(116, 76, 76, 1),
                     fontSize: 44.34,
-                    fontWeight: FontWeight.w200),
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromRGBO(116, 76, 76, 1)),
               ),
             ),
-          ),
-          SizedBox(
-            height: height * 0.2,
-            width: width,
-            child: Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      _itemHolder('I write this for...', '22/02/2025', height, width),
-                      _itemHolder('This is the journey...', '17/02/2025', height, width),
-                    ],
-                  ),
-                )),
-          ),
-          SizedBox(height: 20),
-          Align(
-            alignment: Alignment.center,
-            child: Text('or Start a new one', style: TextStyle(fontSize: 40, color: Color.fromRGBO(116, 76, 76, 1), fontWeight: FontWeight.bold,),)
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: height * 0.07),
-            child: Align(
+            SizedBox(
+              height: 10,
+            ),
+            Container(
               alignment: Alignment.center,
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(50)),
-                child: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add, color: Colors.white,), backgroundColor: Color.fromRGBO(116, 76, 76, 1),),
+              child: Image.asset('assets/images/banner.png'),
+            ),
+            Container(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.only(right: width * 0.12),
+                child: Text(
+                  'Continue',
+                  style: TextStyle(
+                      color: Color.fromRGBO(116, 76, 76, 1),
+                      fontSize: 44.34,
+                      fontWeight: FontWeight.w200),
+                ),
               ),
             ),
-          )
-        ],
+            SizedBox(
+              height: height * 0.2,
+              width: width,
+              child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        _itemHolder('I write this for...', '22/02/2025', height, width),
+                        _itemHolder('This is the journey...', '17/02/2025', height, width),
+                      ],
+                    ),
+                  )),
+            ),
+            SizedBox(height: 20),
+            Align(
+              alignment: Alignment.center,
+              child: Text('or Start a new one', style: TextStyle(fontSize: 40, color: Color.fromRGBO(116, 76, 76, 1), fontWeight: FontWeight.bold,),)
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: height * 0.02),
+              child: Align(
+                alignment: Alignment.center,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                  child: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add, color: Colors.white,), backgroundColor: Color.fromRGBO(116, 76, 76, 1),),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
