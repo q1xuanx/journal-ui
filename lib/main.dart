@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const SplashPage(title: 'Flutter Demo Home Page'),
+      home: const SplashPage(title: 'Journal App'),
     );
   }
 }
