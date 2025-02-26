@@ -1,26 +1,35 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 import 'package:journal_app/ui/data/models/user_model.dart';
 import 'package:journal_app/ui/domain/entity/user.entity.dart';
 import 'package:journal_app/ui/domain/usecase/login_usecase.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:logger/logger.dart';
+@injectable
 class UserBloc extends Cubit<UserState> {
   final LoginUseCase loginUseCase;
-  UserBloc(this.loginUseCase) : super(UserState(-1,'', '', ''));
-  Future<void> login(String username, String password) async {
+  UserBloc(this.loginUseCase) : super(UserState('', ''));
+  Future<int> login(String username, String password) async {
+    var logger = Logger(); 
+    logger.d('$username $password');
     UserEntity user = await loginUseCase.login(UserModel(username, password));
-    emit(UserState(user.id, user.username, user.password, user.fullName));
-    return;
+    if (user.id != -1){
+      SharedPreferences pref = await SharedPreferences.getInstance();
+      pref.setInt('idUser', user.id);
+      pref.setString('username', user.username);
+      pref.setString('password', user.password);
+      pref.setString('fullName', user.fullName);
+      return 1;
+    }
+    return -1;
   }
-
 }
 
 class UserState extends Equatable {
-  final int id;
-  final String username;
-  final String password;
-  final String fullName;
+  String username;
+  String password;
   @override
   List<Object?> get props => [username, password];
-  const UserState(this.id, this.username, this.password, this.fullName);
+  UserState(this.username, this.password);
 }

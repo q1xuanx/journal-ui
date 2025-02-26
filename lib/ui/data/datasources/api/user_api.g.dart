@@ -9,9 +9,7 @@ part of 'user_api.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
 class _UserApi implements UserApi {
-  _UserApi(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://5d42a6e2bc64f90014a56ca0.mockapi.io/api/v1/';
-  }
+  _UserApi(this._dio, {this.baseUrl, this.errorLogger});
 
   final Dio _dio;
 
@@ -26,7 +24,7 @@ class _UserApi implements UserApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(userRequest.toJson());
-    final _options = _setStreamType<UserModel>(
+    final _options = _setStreamType<UserEntity>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,

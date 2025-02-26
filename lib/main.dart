@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:journal_app/locator.dart';
 import 'package:journal_app/ui/presentation/widgets/splash_page.dart';
 
 void main() {
+  configDependencies();
   runApp(const MyApp());
 }
 

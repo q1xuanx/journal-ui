@@ -7,14 +7,14 @@ part of 'user.entity.dart';
 // **************************************************************************
 
 UserEntity _$UserEntityFromJson(Map<String, dynamic> json) => UserEntity(
-      (json['id'] as num).toInt(),
+      (json['idUser'] as num).toInt(),
       json['username'] as String,
       json['password'] as String,
       json['fullName'] as String,
     );
 
 Map<String, dynamic> _$UserEntityToJson(UserEntity instance) => <String, dynamic>{
-      'id': instance.id,
+      'idUser': instance.id,
       'username': instance.username,
       'password': instance.password,
       'fullName': instance.fullName,

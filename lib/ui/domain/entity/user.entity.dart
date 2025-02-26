@@ -5,6 +5,7 @@ part 'user_entity.g.dart';
 
 @JsonSerializable()
 class UserEntity extends Equatable {
+  @JsonKey(name: 'idUser')
   final int id;
   final String username;
   final String password;
