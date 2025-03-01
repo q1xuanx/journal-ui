@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 import 'package:journal_app/ui/data/models/user_model.dart';
-import 'package:journal_app/ui/domain/entity/user.entity.dart';
+import 'package:journal_app/ui/domain/entity/user_entity.dart';
 import 'package:journal_app/ui/domain/usecase/login_usecase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:logger/logger.dart';

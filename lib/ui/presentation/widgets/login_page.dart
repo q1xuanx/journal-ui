@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:journal_app/locator.dart';
 import 'package:journal_app/ui/presentation/bloc/user_bloc.dart';
 import 'package:journal_app/ui/presentation/widgets/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:journal_app/locator.dart';
 import 'package:journal_app/ui/presentation/widgets/splash_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   configDependencies();
